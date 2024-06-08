@@ -1,4 +1,5 @@
 const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 
 const options = {
   definition: {
@@ -6,11 +7,15 @@ const options = {
     info: {
       title: 'API Statistics',
       version: '1.0.0',
-      description: 'API for tracking endpoint statistics',
+      description: 'Statistics API',
     },
   },
-  apis: ['./routes/*.js'], // files containing annotations as above
+  apis: ['./routes/statistics.js'], // Path to the API docs
 };
 
 const specs = swaggerJsdoc(options);
-module.exports = { specs };
+
+module.exports = {
+  swaggerUi,
+  specs,
+};

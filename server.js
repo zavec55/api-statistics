@@ -8,7 +8,7 @@ const statisticsRouter = require('./routes/statistics');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 11115;
+const port = process.env.PORT || 3000;
 const mongoUri = process.env.MONGODB_URI;
 
 app.use(cors());
@@ -27,5 +27,5 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 app.use('/api/statistics', statisticsRouter);
 
 app.listen(port, () => {
-  console.log(`Event service is running on port ${port}`);
+  console.log(`Statistics service is running on port ${port}`);
 });
